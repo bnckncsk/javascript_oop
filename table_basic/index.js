@@ -3,8 +3,9 @@
  * @typedef {{author: string, title: string, concepts: string, concepts2?: string}} ColspanRowType
  * @typedef {{name: string, colSpan?: number}} HeaderType
  * 
- * @callback RenderRowCallback
- * @param {HTMLTableSectionElement}
+ * @callback appendRow
+ * @param {HTMLTableSectionElement} tbody
+ * @returns {void}
 */
 
 /** @type {HeaderType[]}  */
@@ -166,12 +167,31 @@ rowspanTable.render(rowspanBodyArr);
 // });
 
 
-const rowspanButton = document.getElementById('rowspanButton');
+const rowspanButton = buttonCreater('Rowspan elem hozzáadása');
+const colspanButton = buttonCreater('Colspan elem hozzáadása');
 
-rowspanButton.addEventListener('click', onClickButton.bind(rowspanTable)) // .bind a this értéket állítja át (megszunik a golbalis valtozotol valo fugges)
+rowspanButton.addEventListener('click', onClickRowSpanButton.bind(rowspanTable)) // .bind a this értéket állítja át (megszunik a golbalis valtozotol valo fugges)
+
+colspanButton.addEventListener('click', onClickColSpanButton.bind(colspanTable)) // uj callback a colspanos tablazathoz valo hozzafuzeshez
 
 
-function onClickButton(e) {
+/**
+ * gomb letrehozo fuggveny
+ * @param {string} text 
+ * @returns {HTMLButtonElement}
+ */
+function buttonCreater(text){
+    const button = document.createElement('button');
+    button.innerText = text;
+    document.body.appendChild(button);
+    return button;
+}
+
+/**
+ * gomb lenyomasakor hozzafuzi az objektumban megadott sort a rowspanos tablazathoz
+ * @param {Event} e 
+ */
+function onClickRowSpanButton(e) {
     e.preventDefault();
 
     /**
@@ -181,9 +201,11 @@ function onClickButton(e) {
         author: "Kolto",
         title1: "Cim 1", 
         concepts1: "Concept 1", 
+        title2: "Cim 2",
+        concepts2: "Concept 2"
     };
 
-    rowspanTable.appendRow(function(body){
+    this.appendRow(function(body){      // itt valamiert nem latszik a body parameter tipusa
         const tr = document.createElement('tr');
         body.appendChild(tr);
 
@@ -198,5 +220,63 @@ function onClickButton(e) {
         const td3 = document.createElement('td');
         tr.appendChild(td3);
         td3.innerText = objektum.concepts1;
+
+        if (objektum.title2 && objektum.concepts2) {
+            td1.rowSpan = 2;
+
+            const tr2 = document.createElement('tr');
+            body.appendChild(tr2);
+
+            const td4 = document.createElement('td');
+            tr2.appendChild(td4);
+            td4.innerText = objektum.title2;
+
+            const td5 = document.createElement('td');
+            tr2.appendChild(td5);
+            td5.innerText = objektum.concepts2;
+        }
+    })
+}
+
+/**
+ * gomb lenyomasakor hozzafuzi az objektumban megadott sort a colspanos tablazathoz
+ * @param {Event} e 
+ */
+function onClickColSpanButton(e) {
+    e.preventDefault();
+
+    /**
+     * @type {ColspanRowType}
+     */
+    const objektum = {
+        author: "Kolto",
+        title: "Cim 1",
+        concepts: "Concept 1",
+        concepts2: "Concept 2"
+    };
+
+    this.appendRow(function(body){      // itt sem latszik a tipus
+        const tr = document.createElement('tr');
+        body.appendChild(tr);
+
+        const td1 = document.createElement('td');
+        tr.appendChild(td1);
+        td1.innerText = objektum.author;
+
+        const td2 = document.createElement('td');
+        tr.appendChild(td2);
+        td2.innerText = objektum.title;
+
+        const td3 = document.createElement('td');
+        tr.appendChild(td3);
+        td3.innerText = objektum.concepts;
+
+        if (objektum.concepts2) {
+            const td4 = document.createElement('td');
+            tr.appendChild(td4);
+            td4.innerText = objektum.concepts2;
+        } else {
+            td3.colSpan = 2;
+        }
     })
 }
