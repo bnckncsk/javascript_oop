@@ -1,4 +1,5 @@
 import { muvelet, muveletLetrehoz } from "./functions.js";
+import { Gomb } from "./gomb.js";
 
 const input1 = document.createElement('input');
 document.body.appendChild(input1);
@@ -8,20 +9,6 @@ document.body.appendChild(input2);
 
 const div = document.createElement('div');
 document.body.appendChild(div);
-
-const button = document.createElement('button');
-button.innerText = "gob"
-document.body.appendChild(button);
-
-button.addEventListener('click', function() {
-    const in1Val = Number(input1.value);
-    const in2Val = Number(input2.value);
-
-    const p = document.createElement('p');
-    const {result} = muvelet(in1Val, in2Val, muveletLetrehoz('+')); // destructuring
-    p.innerText = result;
-    div.appendChild(p);
-})
 
 
 // eddigi function syntax
@@ -33,9 +20,14 @@ button.addEventListener('click', function() {
 // nincs this, bind, ilyesmi
 //const muvelet = (a, b) => {return a + b};
 
-
+// teszt
 const fv = muveletLetrehoz('+');
 console.log(fv(1, 2));      // 3
 
 // higher order function (Hof): olyan fuggveny, aminek a parametere vagy visszateresi erteke egy fuggveny
 
+
+// uj muveletgombok
+new Gomb(input1, input2, '+', div);
+new Gomb(input1, input2, '-', div);
+new Gomb(input1, input2, '*', div);
