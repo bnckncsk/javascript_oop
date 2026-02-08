@@ -4,11 +4,10 @@ import { Table } from './table.js';
 
 
 const manager1 = new Manager()
-const table1 = new Table(data.colspanHeaderArray, manager1)
+const table1 = new Table(data.colspanHeaderArray, data.colspanDataArr, manager1)
+table1.setManagerCallback();
 
-manager1.addCallback = (element) => {console.log(element)}
 
-for (const row of data.colspanDataArr) {
-    manager1.addElement(row);
-}
-
+const manager2 = new Manager();
+const table2 = new Table(data.rowspanHeaderArray, data.rowspanTableArray, manager2);
+table2.setManagerCallback();
