@@ -20,6 +20,7 @@ class Manager{
         this.#dataArray = [];
     }
 
+    
     /**
      * @param {ColspanType | RowspanType} param 
      */
@@ -30,8 +31,11 @@ class Manager{
         }
     }
 
-    set addCallback(value){
-        this.#addCallback = value;
+    /**
+     * @param {addCallback} param
+     */
+    set addCallback(param){
+        this.#addCallback = param;
     }
 }
 
