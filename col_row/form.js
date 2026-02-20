@@ -11,6 +11,12 @@ class FormController{
      */
     #formFieldElemList;
 
+
+    /**
+     * @type {HTMLFormElement}
+     */
+    #form;
+
     /**
      * 
      * @param {FormFieldType[]} formFields 
@@ -21,6 +27,7 @@ class FormController{
 
         const form = document.createElement('form');
         document.body.appendChild(form);
+        this.#form = form;
         this.#formFieldElemList = [];
         for (const formField of formFields) {
             const formFieldElem = new FormField(formField.id, formField.label, formField.name, formField.required, form);
