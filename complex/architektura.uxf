@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><element><id>UMLClass</id><coordinates><x>440</x><y>165</y><w>297</w><h>187</h></coordinates><panel_attributes>ViewElement
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><element><id>UMLClass</id><coordinates><x>440</x><y>121</y><w>297</w><h>187</h></coordinates><panel_attributes>ViewElement
 --
 -div: HTMLDivElement
 -id: string
@@ -9,32 +9,32 @@
 +set activateCallback(value: ActivateCallback)
 +get div(): HTMLDivElement
 +activate(id:string): void
-+get id(): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>275</x><y>44</y><w>176</w><h>99</h></coordinates><panel_attributes>A div felel az adott 
++get id(): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>275</x><y>0</y><w>176</w><h>99</h></coordinates><panel_attributes>A div felel az adott 
 komponens tartalmának 
 megjelenítéséért.
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1023</x><y>209</y><w>143</w><h>55</h></coordinates><panel_attributes>ActivateCallback
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1023</x><y>165</y><w>143</w><h>55</h></coordinates><panel_attributes>ActivateCallback
 --
-(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>726</x><y>220</y><w>319</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
-Az activate fuggvenyben hivjuk meg</panel_attributes><additional_attributes>270;20;10;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>462</x><y>44</y><w>176</w><h>99</h></coordinates><panel_attributes>Az activate ellenőrzi, hogy
+(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>726</x><y>176</y><w>319</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
+Az activate fuggvenyben hivjuk meg</panel_attributes><additional_attributes>270;20;10;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>462</x><y>0</y><w>176</w><h>99</h></coordinates><panel_attributes>Az activate ellenőrzi, hogy
 megjelenjen a div, vagy ne
 jelenjen meg.
 Az activate a navigációs 
 barnál felül lesz írva.
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1001</x><y>44</y><w>176</w><h>99</h></coordinates><panel_attributes>Az activateCallbacket az 
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1001</x><y>0</y><w>176</w><h>99</h></coordinates><panel_attributes>Az activateCallbacket az 
 adott leszármazottban 
 implementálhatjuk.
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>253</x><y>495</y><w>275</w><h>165</h></coordinates><panel_attributes>NavigationBar
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>253</x><y>451</y><w>275</w><h>165</h></coordinates><panel_attributes>NavigationBar
 --
 -viewElementList: ViewElement[]
 --
 +activate(value: string)
 +addViewElement(label:string, 
 viewElement: ViewElement)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>528</y><w>187</w><h>99</h></coordinates><panel_attributes>Az activate függvény 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>484</y><w>187</w><h>99</h></coordinates><panel_attributes>Az activate függvény 
 hívódik meg a radiogombok 
 eventListenerénél
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>286</x><y>264</y><w>176</w><h>253</h></coordinates><panel_attributes>lt=&lt;-
-m1=0..*</panel_attributes><additional_attributes>140;10;10;10;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>374</x><y>341</y><w>187</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;150;90;10;90;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>561</x><y>495</y><w>264</w><h>165</h></coordinates><panel_attributes>TableView
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>286</x><y>220</y><w>176</w><h>253</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes><additional_attributes>140;10;10;10;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>374</x><y>297</y><w>187</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;150;90;10;90;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>561</x><y>451</y><w>264</w><h>165</h></coordinates><panel_attributes>TableView
 --
 -manager: AuthorManager
 -tbody: HTMLTableSectionElement
@@ -42,7 +42,7 @@ m1=0..*</panel_attributes><additional_attributes>140;10;10;10;10;210</additional
 +constructor(id: string, 
 headerArray: string[], 
 manager: AuthorManager)
--tableCallback(): TableCallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>341</y><w>198</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;160;90;160;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>858</x><y>495</y><w>264</w><h>165</h></coordinates><panel_attributes>FormView
+-tableCallback(): TableCallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>297</y><w>198</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;160;90;160;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>858</x><y>451</y><w>264</w><h>165</h></coordinates><panel_attributes>FormView
 --
 -manager: AuthorManager
 -formInputList: FormInput[]
@@ -51,12 +51,12 @@ manager: AuthorManager)
 formFieldList: FormFieldType, 
 manager: AuthorManager)
 -tableCallback(): TableCallback
--createElement(): AuthorType</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>341</y><w>429</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;370;90;370;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1155</x><y>495</y><w>242</w><h>165</h></coordinates><panel_attributes>ImportExport
+-createElement(): AuthorType</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>297</y><w>429</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;370;90;370;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1155</x><y>451</y><w>242</w><h>165</h></coordinates><panel_attributes>ImportExport
 --
 -manager: AuthorManager
 --
 +constructor(id: string, 
-manager: AuthorManager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>341</y><w>726</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;640;90;640;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>605</x><y>1012</y><w>451</w><h>209</h></coordinates><panel_attributes>AuthorManager
+manager: AuthorManager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>297</y><w>726</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;640;90;640;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>605</x><y>968</y><w>451</w><h>209</h></coordinates><panel_attributes>AuthorManager
 --
 -authorList: Author[]
 -tableCallback: TableCallback
@@ -67,40 +67,41 @@ manager: AuthorManager)</panel_attributes><additional_attributes></additional_at
 +getAllElement(): Author[]
 +addElementList(elementList: AuthorType[]): void
 +getExportContent(): string
-(setterek a callbackekhez)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>165</x><y>1045</y><w>275</w><h>143</h></coordinates><panel_attributes>Author
+(setterek a callbackekhez)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>165</x><y>1001</y><w>275</w><h>143</h></coordinates><panel_attributes>Author
 --
 -id: string
 -name: string
 -work: string
 -concept: string
 --
-(mindegyiknek getter setter, beirni)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>429</x><y>1100</y><w>198</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
-m1=0..*</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>561</x><y>825</y><w>176</w><h>55</h></coordinates><panel_attributes>TableCallback
+(mindegyiknek getter setter, beirni)
++ validate(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>429</x><y>1056</y><w>198</w><h>44</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>561</x><y>781</y><w>176</w><h>55</h></coordinates><panel_attributes>TableCallback
 --
-(authorList: Author[]): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>627</x><y>869</y><w>143</w><h>165</h></coordinates><panel_attributes>lt=&lt;-
+(authorList: Author[]): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>627</x><y>825</y><w>143</w><h>165</h></coordinates><panel_attributes>lt=&lt;-
 meghívja a 
-getAllElementben</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>649</y><w>121</w><h>198</h></coordinates><panel_attributes>lt=&lt;.
-implementálja</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>803</x><y>825</y><w>209</w><h>55</h></coordinates><panel_attributes>AddElementResultCallback
+getAllElementben</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>605</y><w>121</w><h>198</h></coordinates><panel_attributes>lt=&lt;.
+implementálja</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>803</x><y>781</y><w>209</w><h>55</h></coordinates><panel_attributes>AddElementResultCallback
 --
-(message: string): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>891</x><y>869</y><w>121</w><h>165</h></coordinates><panel_attributes>lt=&lt;-
+(message: string): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>891</x><y>825</y><w>121</w><h>165</h></coordinates><panel_attributes>lt=&lt;-
 meghívja a 
-addElementnél</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>858</x><y>649</y><w>132</w><h>198</h></coordinates><panel_attributes>lt=&lt;.
+addElementnél</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>858</x><y>605</y><w>132</w><h>198</h></coordinates><panel_attributes>lt=&lt;.
 implementálja
  a managerből 
 jövő üzenet
- megjelenítésére</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>825</y><w>209</w><h>55</h></coordinates><panel_attributes>ImportResultCallback
+ megjelenítésére</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>781</y><w>209</w><h>55</h></coordinates><panel_attributes>ImportResultCallback
 --
-(message: string): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>869</y><w>550</w><h>231</h></coordinates><panel_attributes>lt=&lt;-
-meghívja a addElementList</panel_attributes><additional_attributes>480;10;480;190;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>1364</x><y>649</y><w>242</w><h>198</h></coordinates><panel_attributes>lt=&lt;.
+(message: string): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>825</y><w>550</w><h>231</h></coordinates><panel_attributes>lt=&lt;-
+meghívja a addElementList</panel_attributes><additional_attributes>480;10;480;190;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>1364</x><y>605</y><w>242</w><h>198</h></coordinates><panel_attributes>lt=&lt;.
 implementálja a managerből 
-jövő üzenet megjelenítésére</panel_attributes><additional_attributes>170;160;170;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1232</x><y>781</y><w>165</w><h>132</h></coordinates><panel_attributes>AuthorType
+jövő üzenet megjelenítésére</panel_attributes><additional_attributes>170;160;170;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1232</x><y>737</y><w>165</w><h>132</h></coordinates><panel_attributes>AuthorType
 --
 +author: string
 +work: string
-+concept: string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1078</x><y>649</y><w>198</w><h>154</h></coordinates><panel_attributes>lt=&lt;.
-előállítja</panel_attributes><additional_attributes>160;120;160;50;10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1243</x><y>649</y><w>88</w><h>154</h></coordinates><panel_attributes>lt=&lt;.
-előállítja</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>902</y><w>286</w><h>165</h></coordinates><panel_attributes>lt=&lt;.
-átalakítja Author osztállyá</panel_attributes><additional_attributes>220;10;220;130;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1034</x><y>737</y><w>165</w><h>176</h></coordinates><panel_attributes>FormInput
++concept: string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1078</x><y>605</y><w>198</w><h>154</h></coordinates><panel_attributes>lt=&lt;.
+előállítja</panel_attributes><additional_attributes>160;120;160;50;10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1243</x><y>605</y><w>88</w><h>154</h></coordinates><panel_attributes>lt=&lt;.
+előállítja</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>858</y><w>286</w><h>165</h></coordinates><panel_attributes>lt=&lt;.
+átalakítja Author osztállyá</panel_attributes><additional_attributes>220;10;220;130;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1034</x><y>693</y><w>165</w><h>176</h></coordinates><panel_attributes>FormInput
 --
 -inputElement: HTMLInputElement
 -errorDiv: HTMLDivElement
@@ -110,5 +111,5 @@ előállítja</panel_attributes><additional_attributes>10;120;10;10</additional_
 label: string, name: string,
 parent: Form)
 +validate(): boolean
-+getValue(): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1034</x><y>649</y><w>55</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
-m1=0..*</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1012</x><y>649</y><w>33</w><h>385</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;330;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>759</x><y>649</y><w>33</w><h>385</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;330;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>550</y><w>759</w><h>616</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;540;670;540;670;10;320;10</additional_attributes></element></diagram>
++getValue(): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1034</x><y>605</y><w>55</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1012</x><y>605</y><w>33</w><h>385</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;330;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>759</x><y>605</y><w>33</w><h>385</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;330;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>506</y><w>759</w><h>616</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;540;670;540;670;10;320;10</additional_attributes></element></diagram>
